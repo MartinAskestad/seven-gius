@@ -1,14 +1,10 @@
 <div class="counter">
   <div class="row">
     <div class="col-auto">
-      <input #counter size="3" readonly value="0" class="form-control" />
+      <input size="3" readonly [value]="T" class="form-control" />
     </div>
     <div class="col-auto">
-      <button
-        type="button"
-        (click)="counter.value = +counter.value + 1"
-        class="btn btn-primary"
-      >
+      <button type="button" (click)="count()" class="btn btn-primary">
         Count
       </button>
     </div>

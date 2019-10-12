@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'svn-counter',
   templateUrl: './counter.component.html',
   styles: []
 })
-export class CounterComponent implements OnInit {
+export class CounterComponent {
+  T = 0;
 
-  constructor() { }
-
-  ngOnInit() {
+  count() {
+    this.T++;
   }
-
 }
