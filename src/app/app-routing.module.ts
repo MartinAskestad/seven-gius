@@ -6,6 +6,11 @@ const routes: Routes = [
     path: 'counter',
     loadChildren: () =>
       import('./counter/counter.module').then(m => m.CounterModule)
+  },
+  {
+    path: 'temperature',
+    loadChildren: () =>
+      import('./temperature/temperature.module').then(m => m.TemperatureModule)
   }
 ];
 

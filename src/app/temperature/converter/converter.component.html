@@ -1,0 +1,24 @@
+<form action="">
+  <div class="row form-group">
+    <div class="col-auto">
+      <input
+        #Tc
+        type="number"
+        class="form-control"
+        [value]="C"
+        (input)="convertCtoF(Tc.value)"
+      />
+    </div>
+    <label for="" class="col-form-label">Celsius =</label>
+    <div class="col-auto">
+      <input
+        #Tf
+        type="number"
+        class="form-control"
+        [value]="F"
+        (input)="convertFtoC(Tf.value)"
+      />
+    </div>
+    <label class="col-form-label">Fahrenheit</label>
+  </div>
+</form>
