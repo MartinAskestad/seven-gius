@@ -1,0 +1,48 @@
+<form>
+  <div class="container">
+    <div class="row">
+      <div class="col-auto">
+        <select name="C" class="form-control" [(ngModel)]="cval">
+          <option value="1">one-way flight</option>
+          <option value="2">return flight</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-auto">
+        <input
+          name="T1"
+          class="form-control"
+          [(ngModel)]="t1val"
+          svnDateValidator
+          #T1="ngModel"
+          [class.is-invalid]="T1.invalid"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-auto">
+        <input
+          #T2="ngModel"
+          name="T2"
+          class="form-control"
+          [attr.disabled]="getT2Disabled()"
+          [(ngModel)]="t2val"
+          svnDateValidator
+          [svnDateRangeValidator]="T1.value"
+          [class.is-invalid]="T2.hasError('pattern')"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-auto">
+        <button
+          class="btn btn-primary"
+          [attr.disabled]="T2.invalid || T1.invalid ? 'disabled' : null"
+        >
+          Book
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

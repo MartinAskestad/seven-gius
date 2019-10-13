@@ -11,6 +11,13 @@ const routes: Routes = [
     path: 'temperature',
     loadChildren: () =>
       import('./temperature/temperature.module').then(m => m.TemperatureModule)
+  },
+  {
+    path: 'flight-booker',
+    loadChildren: () =>
+      import('./flight-booker/flight-booker.module').then(
+        m => m.FlightBookerModule
+      )
   }
 ];
 
